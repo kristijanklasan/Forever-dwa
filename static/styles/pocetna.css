@@ -1,0 +1,82 @@
+body {
+	background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(Slike/pocetna.gif)no-repeat center fixed;
+	background-size: cover; 
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Izbornik */
+.navbar {
+	overflow: hidden;
+	background-color: black; 
+	width: 100%;
+}
+
+.navbar a {
+	float: right;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.container{
+	width: 80%; 
+	margin: 0 auto; 
+}
+
+header{
+	background: black; 
+}
+
+header::after{
+	content: ''; 
+	display: table; 
+	clear: both; 
+}
+
+.logo{
+	margin: 0px 0px 0px 10px;
+	padding: 0px 20px 0px 40px; 
+	width: 10%; 
+}
+.slika{ 
+	width: 40%;
+    height: 500px;
+    position: absolute;
+    left: 450px;
+    top: 0;
+}
+
+.navbar {
+	overflow: hidden;
+	background-color: black; 
+	width: 100%;
+}
+
+.navbar a {
+	float: right;
+	font-size: 20px;
+	color: white;
+	text-align: center;
+	padding: 0px 16px;
+	text-decoration: none;
+}
+.navbar a::hover{
+	background-color: #FFFF00;
+    color: #FFC0CB;
+}
+
+.button{
+	position: absolute; 
+	top: 70%; 
+	left: 32%;	
+
+}
+.btn{
+	padding: 25px 80px;
+	border: 2px solid #fff; 
+	color: white;
+	text-decoration: none; 
+}

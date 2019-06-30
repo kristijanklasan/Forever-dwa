@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pregled filmova</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="static/styles/pregled_drustvene.css">
+	<link rel="stylesheet" href="static/styles/pregled.css">
+	<link rel="shortcut icon" href="static/styles/Slike/logo1.png" type="image/x-icon"/>
+</head>
+<body>
+	<div class="navbar">
+			<a href="odjava">Odjava <i class="fa fa-sign-out"></i></a>
+			<a href="moja_lista">Moja lista <i class="fa fa-list" aria-hidden="true"></i></a>
+		<div class="subnav">
+			<button class="subnavbtn">Društvene igre<i class="fa fa-chevron-down"></i></button>
+			<div class="subnav-content">
+				<a href="kartaske"><i class="fa fa-heart"></i> Kartaške igre</a>
+				<a href="ploca"><span class="iconify" data-icon="fa-solid:chess-knight"></span> Igre na ploči</a>
+			</div>
+		</div> 
+		<div class="subnav">
+			<button class="subnavbtn">Filmovi<i class="fa fa-chevron-down"></i></button>
+			<div class="subnav-content">
+				<a href="triler">Triler</a>
+				<a href="komedija">Komedija</a>
+				<a href="horor">Horor</a>
+				<a href="drama">Drama</a>
+				<a href="akcija">Akcija</a>
+			</div>
+		</div> 
+		<div class="subnav">
+				<button class="subnavbtn">Izlazak <i class="fa fa-chevron-down"></i></button>
+			<div class="subnav-content">
+				<a href="slasticarna"><i class="fa fa-birthday-cake"></i>Slastičarne</a>
+				<a href="nocni_klubovi"><i class="fa fa-music"></i> Noćni klubovi</a>
+				<a href="kafic"><i class="fa fa-glass"></i> Kafići</a>
+				<a href="restorani"><i class="fa fa-cutlery"></i> Restorani</a>
+			</div>
+		</div>
+		<img src="static/styles/Slike/logo.png" alt="logo" class="logo">
+	</div>
+	<div class="loginbox">
+		<div class="container header">
+			<a href="kartaske" class="header-gumb"><i class="fa fa-arrow-left"></i>Povratak </a>
+		</div>
+		<div class="slika">
+			<img height="250" width="300" src="{% for item in data %}{{item[6]}}{%endfor%}">
+		</div>
+		<div class="left-box">
+			<h1>{% for item in data %}{{item[2]}}{%endfor%}</h1>
+			
+			<p><b>Kategorija igre: </b>{% for item in data %}{{item[1]}}{%endfor%}</p><br>
+
+			<p><b>Broj igrača: </b>{% for item in data %}{{item[3]}}{%endfor%}</p><br>
+			
+			<p align="justify"><b>Opis igre: </b>{% for item in data %}{{item[4]}}{%endfor%}</p><br>
+	
+		</div>
+		
+		<div class="container header">
+			<p class="tekst"><b>Unesi datum:<b></p> 
+		</div>
+		
+		<form method="POST" name="vform" onsubmit="return dodaj()" action ="/lista_drustvena" >
+			<input type="hidden" name="naziv" value="{% for item in data %}{{item[2]}}{%endfor%}"required>
+			<input type="date" name="datum" class="datum" >
+			<input type="submit" value="Dodaj na listu" class="header-dodaj">
+		</form>
+		
+		<form method="POST" name="vform" onsubmit="return izbrisi()" action ="/izbrisi_igru">
+			<input type="hidden" name="izbrisi" value="{% for item in data %}{{item[2]}}{%endfor%}"required>
+			<input type="submit" value="Izbriši ponudu" class="header-izbrisi">
+		</form>
+		<a href="{% for item in data %}{{item[5]}}{%endfor%}" class="header-igra"><i class="fa fa-gamepad"></i>Zaigraj igru </a>
+		
+		<a class="header-promijeni" onclick="promijeni_drustvene()" href="#popup1">Update podataka</a>
+			
+	<div id="popup1" class="overlay">
+		<div class="popup">
+		<form method="POST" name="vform" action ="/update_drustvene">
+			<h2>Uredi ponudu</h2><br>
+				
+			<h3>Uredi naziv igre:</h3>
+			<input type="text" id="naziv" name="naziv" class="datum-novo">
+			
+			<h3>Uredi broj igrača:</h3>
+			<input type="text" id="broj" name="broj" class="datum-novo">
+			
+			<h3>Uredi opis:</h3>
+			<input type="text" id="opis" name="opis" class="datum-novo">
+			
+			<h3>Uredi link za igru:</h3>
+			<input type="text" id="link" name="link" class="datum-novo">
+			
+			<h3>Uredi link postera:</h3>
+			<input type="text" id="poster" name="poster" class="datum-novo">
+			
+			<input type="hidden" id="id" name="id" class="datum-novo"> 
+			
+			<input type="submit" value="Spremi promjene" class="gumb-promijeni">
+			<a class="close" href="#">&times;</a>
+		</form>
+		</div>
+	</div>	
+	</div>
+	<input type="hidden" id="naziv1" value="{% for item in data %}{{item[2]}}{%endfor%}"required>
+	<input type="hidden" id="broj1" value="{% for item in data %}{{item[3]}}{%endfor%}"required>
+	<input type="hidden" id="opis1" value="{% for item in data %}{{item[4]}}{%endfor%}"required>
+	<input type="hidden" id="link1" value="{% for item in data %}{{item[5]}}{%endfor%}"required>
+	<input type="hidden" id="poster1" value="{% for item in data %}{{item[6]}}{%endfor%}"required>
+	<input type="hidden" id="id1" value="{% for item in data %}{{item[0]}}{%endfor%}"required>
+	
+	<script type="text/javascript" src="static/styles/pregled_drustvenih.js"></script>
+	<script src="https://code.iconify.design/1/1.0.2/iconify.min.js"></script>
+</body>
+</html>

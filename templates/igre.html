@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Igre na ploči</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="static/styles/igre.css">
+	<link rel="stylesheet" href="static/styles/popup_izlasci.css">
+   	<link rel="shortcut icon" href="static/styles/Slike/logo1.png" type="image/x-icon"/>
+</head>
+<body>
+	<div class="navbar">
+			<a href="odjava">Odjava <i class="fa fa-sign-out"></i></a> 
+			<a href="moja_lista">Moja lista <i class="fa fa-list" aria-hidden="true"></i></a>
+		<div class="subnav">
+			<button class="subnavbtn">Društvene igre<i class="fa fa-chevron-down"></i></button>
+			<div class="subnav-content">
+				<a href="kartaske"><i class="fa fa-heart"></i> Kartaške igre</a>
+				<a href="ploca"><span class="iconify" data-icon="fa-solid:chess-knight"></span> Igre na ploči</a>
+			</div>
+		</div> 
+		<div class="subnav">
+			<button class="subnavbtn">Filmovi<i class="fa fa-chevron-down"></i></button>
+			<div class="subnav-content">
+				<a href="triler">Triler</a>
+				<a href="komedija">Komedija</a>
+				<a href="horor">Horor</a>
+				<a href="drama">Drama</a>
+				<a href="akcija">Akcija</a>
+			</div>
+		</div> 
+		<div class="subnav">
+				<button class="subnavbtn">Izlazak <i class="fa fa-chevron-down"></i></button>
+			<div class="subnav-content">
+				<a href="slasticarna"><i class="fa fa-birthday-cake"></i> Slastičarne</a>
+				<a href="nocni_klubovi"><i class="fa fa-music"></i> Noćni klubovi</a>
+				<a href="kafic"><i class="fa fa-glass"></i> Kafići</a>
+				<a href="restorani"><i class="fa fa-cutlery"></i> Restorani</a>
+			</div>
+		</div>
+		<img src="static/styles/Slike/logo.png" alt="logo" class="logo">
+	</div>
+	<div class="loginbox">
+		<h2>Pretraži igre na ploči</h2><br>
+		
+		<form class="gumb" method="POST" name="vform" action ="/pregled_drustvenih" enctype="multipart/form-data">
+			<input type="text" id="trazilica" name="drustvene" placeholder="Unesi igru koju želiš prikazati" required>
+			<button type="submit" id="trazi" ><i class="fa fa-search"></i></button>
+		</form>
+		
+		<h3>Ponude koje možete pretražiti!</h3>
+		
+		<div class="row">
+			<div class="column">
+				<a id="1" onclick="klikni(this)" naziv-slike="Šah"><img src="https://store-images.s-microsoft.com/image/apps.14909.9007199266242760.c3e6f9d5-430e-48e7-a730-fb40d68d4a14.def4b2e1-7332-4762-b6f8-3048befd8b4a" width="200" height="200"></a>
+				<p class="velicina">Šah</p>
+			</div>		
+			<div class="column">
+				<a id="2" onclick="klikni(this)" naziv-slike="Risk"><img src="https://cf.shopee.ph/file/59a79792ee34a4147cb82f96d26907a7" width="200" height="200"></a>
+				<p class="velicina">Risk</p>
+			</div>
+		</div>
+		<img class="dodaj3" onClick="otvori()">
+		<div class="form-popup" id="forma">
+			<form class="form-container" method="POST" name="vform" action ="/ploca" enctype="multipart/form-data">
+			
+				<label for="kategorija"><b>Kategorija:</b></label> 
+				<select name="kategorija" class="tag">
+					<option value="Kartaske_igre">Kartaške igre</option>
+					<option value="Igre_ploca">Igre na ploči</option>
+				</select><br><br>
+				
+				<label name="naziv"><b>Naziv igre:</b></label>
+				<input type="text" name="naziv" placeholder="Unesi naziv igre" required>
+				
+				<label name="broj"><b>Broj igrača:</b></label>
+				<input type="text" name="broj" placeholder="Unesi broj igrača" required>
+	
+				<label name="opis"><b>Opis igre:</b></label>
+				<input type="text" name="opis" placeholder="Unesi opis igre" required>
+				
+				<label name="poster"><b>Unesi link za sliku:</b></label>
+				<input type="text" name="poster" placeholder="Unesi link za sliku" required>
+				
+				<label name="link"><b>Unesi link za online igranje:</b></label>
+				<input type="text" name="link" placeholder="Unesi link za online igru" required>
+				
+				<label><b>Dodaj sliku:</b></label>
+				<input type="file" name="image" id="image" accept="image/*"/>
+				<br><br>
+				
+				<input type="submit" value="Spremi" onclick="clicked()" class="btn">
+				<button type="button" class="btn cancel" onclick="zatvori()">Odustani</button>
+			</form>
+		<div id='theParent' class='center_the_stuff'></div>
+	</div>
+</div>
+	<script type="text/javascript" src="static/styles/popup_izlasci.js"></script>
+	<script src="https://code.iconify.design/1/1.0.2/iconify.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: url(Slike/slika1.jpg) no-repeat fixed; 
+  background-size: cover; 
+  font-family: Verdana; 
+  color: white;
+}
+.navbar {
+  overflow: hidden;
+  background-color: black; 
+  width: 100%;
+}
+
+.navbar a {
+  float: right;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.logo{
+	margin: 5px 40px; 
+	padding: 5px 20px 0px 40px; 
+	width: 11.5%; 
+}
+
+.subnav {
+  float: right;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: black;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: purple;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: blue;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: right;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: green;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+
+.lista{
+	width: 1200px; 
+	height: 600px; 
+	background: #000000; 
+	color: #fff; 
+	top: 50%;  
+	left: 50%; 
+	position: absolute; 
+	transform: translate(-50%,-50%); 
+	box-sizing: border-box; 
+	padding: 40px 10px;
+	opacity: 0.9; 	
+}
+
+p{
+	float: left; 
+	margin: 60px 20px;
+	padding: 0px;
+	font-family: Helvetica;
+	font-size: 28px; 
+	color: white; 
+}
+
+h1{
+	margin: 0; 
+	padding: 10px 0px 0px 20px; 
+	text-align: left; 
+	font-size: 30px; 
+	color: white; 
+}
+
+h2{
+	margin: 20px 30px; 
+	font-size: 30px; 
+	color: white; 
+}
+
+h3{
+	margin: 0; 
+	padding: 30px 0px 0px 20px; 
+	text-align: left; 
+	font-size: 20px; 
+	color: black; 
+}
+
+.datum {
+	cursor: pointer; 
+	padding: 10px;
+	font-size: 17px;
+	border: 1px solid grey;
+	width: 29%;
+	margin: 60px 10px;
+}
+
+.gumb-datum{
+	width: 20%;
+	margin: 70px 11px;
+	padding: 10.5px;
+	background: #2196F3;
+	color: white;
+	font-size: 17px;
+	border: 1px solid grey;
+	cursor: pointer;
+}
+
+.izbrisi{
+	width: 30%;
+	margin: 25px 11px;
+	padding: 9px;
+	background: #6E8BCE;
+	color: white;
+	font-size: 17px;
+	border: 1px solid #6E8BCE;
+	cursor: pointer;
+}
+.izbrisi:hover {
+	background: purple;
+}
+
+.datum-novo{
+	width: 76.8%;
+	margin: 25px 11px;
+	padding: 9px;
+	background: #6E8BCE;
+	color: white;
+	font-size: 17px;
+	border: 1px solid #6E8BCE;
+	cursor: pointer;
+	text-align: center; 
+}
+.datum-novo:hover {
+	background: purple;
+}
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 51%;
+}
+
+td, th {
+	border: 3px solid grey;
+	padding: 20px;
+}
+
+.box {	
+	float: right; 
+	width: 20%;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	background: rgba(255,255,255,0.2);
+	padding: 25px;
+	border: 2px solid #fff;
+	border-radius: 20px/40px;
+	text-align: center;
+}
+
+.izbrisi2 {
+	font-size: 1em;
+	padding: 10px;
+	color: #fff;
+	border: 2px solid #06D85F;
+	border-radius: 15px/40px;
+	cursor: pointer;
+}
+.izbrisi2:hover {
+	background: #06D85F;
+}
+
+.brisi{
+	width: 40%;
+	margin: 25px 11px;
+	padding: 9px;
+	background: #155753;
+	color: white;
+	font-size: 17px;
+	border: 2px solid #155753;
+	cursor: pointer;
+}
+.brisi:hover {
+	background: green;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+
+.popup {
+	margin: 70px auto;
+	padding: 20px;
+	background: #fff;
+	border-radius: 5px;
+	width: 40%;
+	position: relative;
+	transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+	margin-top: 0;
+	color: #333;
+	font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+.popup .close:hover {
+	color: #06D85F;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+	width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}

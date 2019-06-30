@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Moja lista</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="shortcut icon" href="static/styles/Slike/logo1.png" type="image/x-icon"/>
+	<link rel="stylesheet" href="static/styles/moja_lista.css">
+</head>
+<body>
+	<div class="navbar">
+			<a href="odjava">Odjava <i class="fa fa-sign-out"></i></a>
+			<a href="moja_lista">Moja lista <i class="fa fa-list" aria-hidden="true"></i></a>
+		<div class="subnav">
+			<button class="subnavbtn">Društvene igre<i class="fa fa-chevron-down"></i></button>
+			<div class="subnav-content">
+				<a href="kartaske"><i class="fa fa-heart"></i> Kartaške igre</a>
+				<a href="ploca"><span class="iconify" data-icon="fa-solid:chess-knight"></span> Igre na ploči</a>
+			</div>
+		</div> 
+		<div class="subnav">
+			<button class="subnavbtn">Filmovi<i class="fa fa-chevron-down"></i></button>
+			<div class="subnav-content">
+				<a href="triler">Triler</a>
+				<a href="komedija">Komedija</a>
+				<a href="horor">Horor</a>
+				<a href="drama">Drama</a>
+				<a href="akcija">Akcija</a>
+			</div>
+		</div> 
+		<div class="subnav">
+				<button class="subnavbtn">Izlazak <i class="fa fa-chevron-down"></i></button>
+			<div class="subnav-content">
+				<a href="slasticarna"><i class="fa fa-birthday-cake"></i> Slastičarne</a>
+				<a href="nocni_klubovi"><i class="fa fa-music"></i> Noćni klubovi</a>
+				<a href="kafic"><i class="fa fa-glass"></i> Kafići</a>
+				<a href="restorani"><i class="fa fa-cutlery"></i> Restorani</a>
+			</div>
+		</div>
+		<img src="static/styles/Slike/logo.png" alt="logo" class="logo">
+	</div>
+	<div class="lista">
+		<h1>Moja lista</h1>
+		<form method="POST" name="vform" action ="/moja_lista" enctype="multipart/form-data">
+			<p>Unesite datum:</p>
+			<input type="date" class="datum" name="datum" id="1" onclick="lista(this)">
+			
+			<input type="submit" value="Prikaži ponude" class="gumb-datum">
+		</form>
+		<table>
+			<tr>
+			<th>Moje želje</th>
+			<th>{% for item in data %}<br><br>{{item[1]}}{%endfor%}</th>
+			</tr>
+		</table>
+		<div class="box">
+			<a class="izbrisi2"  href="#popup1">Izbriši želju</a>
+		</div>
+	<div id="popup1" class="overlay">
+		<div class="popup">
+		<form method="POST" name="vform" action ="/moja_lista_brisi">
+			<h2>Izbriši ponudu</h2>
+			
+			<h3>Odaberi datum:</h3>
+			<input type="date" name="datumm" class="datum-novo">
+			<br>
+			<h3>Unesi želju koju želiš izbrisati:</h3>
+			<input type="text" name="brisi" class="izbrisi"> 
+			
+			<input type="submit" value="Izbriši želju" class="brisi">
+			<a class="close" href="#">&times;</a>
+		</form>
+		</div>
+	</div>	
+	</div>
+	<script src="https://code.iconify.design/1/1.0.2/iconify.min.js"></script>
+</body>
+</html>

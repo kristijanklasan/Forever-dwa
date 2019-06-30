@@ -1,0 +1,156 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.dodaj{
+	background: url(Slike/dodaj.png)no-repeat; 
+	padding: 70px; 
+	background-size: cover;
+	color: transparent; 
+	position: absolute; 
+	top: 400px; 
+	right: 40px; 
+	cursor: pointer;
+}
+
+.dodaj2{
+	background: url(Slike/gumb.png)no-repeat; 
+	padding: 70px; 
+	background-size: cover;
+	color: transparent; 
+	position: absolute; 
+	top: 400px; 
+	right: 40px;
+	cursor: pointer;   
+}
+
+.dodaj3{
+	background: url(Slike/treca.png)no-repeat; 
+	padding: 60px; 
+	background-size: cover;
+	color: transparent; 
+	position: absolute; 
+	top: 400px; 
+	right: 40px;
+	cursor: pointer;   
+}
+.slika{
+	width: 180px;
+	height: 250px; 
+}
+.column {
+	float: left;
+	width: 20%;
+	padding: 5px;
+}
+
+.row::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.velicina{ 
+	padding: 0px 0px 10px 10px; 
+	font-size: 20px;
+	margin-left: 60px; 
+	font-variant: small-caps;
+	color: white; 
+}
+
+/* Pretraživanje--- unos i gumb */ 
+form.gumb input[type=text] {
+	padding: 10px 0px 10px 10px; 
+	font-size: 17px;
+	border: 1px solid grey;
+	float: left;
+	width: 30%;
+	background: #f1f1f1;
+}
+
+form.gumb button {
+	float: left;
+	width: 10%;
+	padding: 10px;
+	background: #2196F3;
+	color: white;
+	font-size: 17px;
+	border: 1px solid grey;
+	cursor: pointer;
+}
+
+form.gumb button:hover {
+	background: #0b7dda;
+}
+
+form.gumb::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/* popup */ 
+.form-popup {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	right: 60px;
+	border: 3px solid black;
+	z-index: 9;
+}
+
+/* postavke forme */
+.form-container {
+	width: 625px;
+	padding: 10px; 
+	background-color: white;
+}
+
+
+.form-container input[type=text] {
+	width: 100%;
+	padding: 10px;
+	margin: 5px 0 30px 0;
+	border: none;
+	background-color: #ddd;
+	outline: none; 
+}
+
+.form-container .btn {
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	cursor: pointer;
+	middle: 50px; 
+	width: 50%;
+	opacity: 0.8;
+	width: 300px;
+	height: 40px; 
+}
+
+.form-container .cancel {
+	background-color: red;
+	width: 300px;
+	height: 40px;
+
+}
+
+.form-container .btn:hover, .open-button:hover {
+	opacity: 1;
+}
+
+.upload{
+	top: 80px; 
+	color: green;
+	background-color: white;
+	border-radius: 6px;
+	font-size: 15px; 
+}
+
+.tag{
+	background-color: #4e42f5;
+	width: 50%;
+	height: 60;
+	color: white; 
+	border: 2px solid transparent;
+	border-color: #fff transparent transparent transparent;
+}

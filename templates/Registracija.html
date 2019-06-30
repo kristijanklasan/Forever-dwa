@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Registracija</title> 
+    <meta charset="UTF-8"> 
+	<link rel="stylesheet" type="text/css" href="static/styles/registracija.css">
+	<link rel="shortcut icon" href="static/styles/Slike/logo1.png" type="image/x-icon"/>
+</head> 
+<body> 
+	<div class="loginbox">
+	<img src="static/styles/Slike/contact.png" class="korisnik">
+		<h1>Registracija</h1> 
+		<form  method="POST" name="vform" onsubmit="return Validacija()">
+			
+			<p>Ime:</p> 
+			<input type="text" name="ime" placeholder="Unesi ime korisnika"> 
+			<div id="ime_error" class="val_error"></div> 
+			
+			<p>Prezime:</p> 
+			<input type="text" name="prezime" placeholder="Unesi prezime korisnika"> 
+			<div id="prezime_error" class="val_error"></div> 
+			
+			<p>E-mail:</p> 
+			<input type="email" name="email" placeholder="Unesi E-mail adresu">
+			<div id="email_error" class="val_error"></div> 
+		
+			<p>Lozinka:</p> 
+			<input type="password" name="lozinka" placeholder="Unesi lozinku">
+			<div id="lozinka_error" class="val_error"></div> 
+			
+			<input type="submit" value="Registriraj se" onclick="klik()">
+			<a href="prijava"><br>Imaš korisnički račun?</a> 
+		</form> 	
+	</div>
+	<script type="text/JavaScript" src="registracija.js"></script>	
+</body>
+
+</html> 
+

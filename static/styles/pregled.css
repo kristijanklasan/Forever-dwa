@@ -1,0 +1,355 @@
+body {
+	background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(Slike/pregled.jpg)no-repeat center fixed;
+	background-size: cover; 
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Izbornik */
+.navbar {
+	overflow: hidden;
+	background-color: black; 
+	width: 100%;
+}	
+
+.navbar a {
+	float: right;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.logo{
+	margin: 5px 40px; 
+	padding: 5px 20px 0px 40px; 
+	width: 11.5%; 
+}
+
+.subnav {
+	float: right;
+	overflow: hidden;
+}
+
+.subnav .subnavbtn {
+	font-size: 16px;  
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: black;
+	font-family: inherit;
+	margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+	background-color: purple;
+}
+
+.subnav-content {
+	display: none;
+	position: absolute;
+	left: 0;
+	background-color: blue;
+	width: 100%;
+	z-index: 1;
+}
+
+.subnav-content a {
+	float: right;
+	color: white;
+	text-decoration: none;
+}
+
+.subnav-content a:hover {
+	background-color: #eee;
+	color: green;
+}
+
+.subnav:hover .subnav-content {
+	display: block;
+}
+
+.loginbox{
+	width: 1000px; 
+	height: 600px; 
+	background: #000000; 
+	color: black; 
+	top: 50%;  
+	left: 50%; 
+	position: absolute; 
+	transform: translate(-50%,-50%); 
+	box-sizing: border-box; 
+	padding: 40px 10px; 
+	opacity: 0.9;
+}
+
+/* forma pregleda */ 
+*{
+	margin: 0; 
+	padding: 0; 
+}
+h1{
+	padding: 0px 0px 30px 0px; 
+	font-size: 50px; 
+	color: white; 
+}
+
+p{ 
+	font-size: 20px; 
+	color: white; 
+}
+.tekst{ 
+	position: absolute;
+	bottom: 225px;
+	right: 230px; 
+}
+
+.header{
+	height: 5%; 
+}
+
+.header-gumb{
+	border-radius: 30px;
+	padding: 11.8px 20px; 
+	color: white; 
+	background: #107afd; 
+	font-weight: 600; 
+}
+
+.header-trailer{
+	position: absolute;
+	bottom: 10px;
+	right: 510px;
+	text-decoration: none; 
+	border-radius: 30px; 
+	padding: 9px 20px; 
+	color: white; 
+	background: purple; 
+	font-weight: 600; 
+}
+
+.header-izbrisi{
+	position: absolute;
+	bottom: 10px;
+	right: 170px;
+	border-radius: 30px;
+	border: none;  
+	padding: 11.8px 30px; 
+	color: #fff; 
+	background: #000033; 
+	font-weight: 700; 
+	cursor: pointer;
+}
+
+.header-izbrisi:hover {
+	background: blue;
+}
+.header-dodaj{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	border-radius: 30px;
+	border: none;
+	padding: 11.8px 30px;  
+	color: white; 
+	background: maroon; 
+	font-weight: 700; 
+	cursor: pointer;
+}
+
+.header-dodaj:hover {
+	background: red;
+}
+
+.gumb2{
+	float: right; 
+	padding: 9px 20px; 
+	text-decoration: none; 
+	border-radius: 30px; 
+	color: white; 
+	font-weight: 700;
+	cursor: pointer;
+	background: #003300; 
+
+}
+
+.left-box{
+	margin: 20px 400px 10px 15px;
+	color: #fff;
+	padding: 10px;
+}
+
+.datum {
+	position: absolute;
+	bottom: 170px;
+	right: 40px; 
+	width: 29.5%;
+	cursor: pointer; 
+	padding: 10px;
+	background: #35465e;
+	color: white;
+	font-size: 17px;
+	border: 1px solid #35465e;
+}
+
+.fa{
+	margin: 0 5px;
+}
+
+.slika img{
+	float:right;
+	margin: 10px 40px 50px 4px;
+}
+
+.datum {
+	cursor: pointer; 
+	padding: 10px;
+	font-size: 17px;
+	border: 1px solid grey;
+	width: 29%;
+	margin: 0px 10px;
+}
+
+.gumb-datum{
+	width: 20%;
+	margin: 70px 11px;
+	padding: 10.5px;
+	background: #2196F3;
+	color: white;
+	font-size: 17px;
+	border: 1px solid grey;
+	cursor: pointer;
+}
+
+.izbrisi{
+	width: 30%;
+	margin: 25px 11px;
+	padding: 9px;
+	background: #6E8BCE;
+	color: white;
+	font-size: 17px;
+	border: 1px solid #6E8BCE;
+	cursor: pointer;
+}
+.izbrisi:hover {
+	background: purple;
+}
+
+.datum-novo{
+	width: 76.8%;
+	margin: 20px 11px;
+	padding: 4px;
+	background: #6E8BCE;
+	color: white;
+	font-size: 17px;
+	border: 1px solid #6E8BCE;
+	cursor: pointer;
+	text-align: center; 
+}
+
+.datum-novo:hover {
+	background: purple;
+}
+
+.header-promijeni {
+	position: absolute;
+	bottom: 10px;
+	right: 335px;
+	background: green; 
+	color: white; 
+	border-radius: 30px;
+	border: none;
+	padding: 10px 20px; 
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.header-promijeni:hover {
+	background: #06D85F;
+}
+
+.header-igra{
+	position: absolute;
+	bottom: 10px;
+	right: 515px;
+	border-radius: 30px; 
+	border: none;
+	padding: 9px 20px; 
+	color: white; 
+	background: #664790; 
+	font-weight: 600; 
+}
+
+.header-igra:hover{
+	background: #584383;
+}
+
+.gumb-promijeni{
+	width: 40%;
+	margin: 0px 11px;
+	padding: 10px 20px; 
+	background: #155753;
+	color: white;
+	font-size: 17px;
+	border: 2px solid #155753;
+	cursor: pointer;
+}
+
+.brisi:hover {
+	background: green;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+
+.popup {
+	margin: 0px auto;
+	padding: 5px;
+	background: #fff;
+	border-radius: 5px;
+	width: 40%;
+	position: relative;
+	transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+	margin-top: 0;
+	color: #333;
+	font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+.popup .close:hover {
+	color: #06D85F;
+}
+
+@media screen and (max-width: 700px){
+  .popup{
+    width: 70%;
+  }
+}

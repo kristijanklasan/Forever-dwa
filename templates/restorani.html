@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Restorani</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="static/styles/izbornik3.css">
+	<link rel="stylesheet" href="static/styles/popup_izlasci.css">
+	<link rel="shortcut icon" href="static/styles/Slike/logo1.png" type="image/x-icon"/>
+   
+</head>
+<body>
+	<div class="navbar">
+			<a href="odjava">Odjava <i class="fa fa-sign-out"></i></a> 
+			<a href="moja_lista">Moja lista <i class="fa fa-list" aria-hidden="true"></i></a>
+		<div class="subnav">
+			<button class="subnavbtn">Društvene igre<i class="fa fa-chevron-down"></i></button>
+			<div class="subnav-content">
+				<a href="kartaske"><i class="fa fa-heart"></i> Kartaške igre</a>
+				<a href="ploca"><span class="iconify" data-icon="fa-solid:chess-knight"></span> Igre na ploči</a>
+			</div>
+		</div> 
+		<div class="subnav">
+			<button class="subnavbtn">Filmovi<i class="fa fa-chevron-down"></i></button>
+			<div class="subnav-content">
+				<a href="triler">Triler</a>
+				<a href="komedija">Komedija</a>
+				<a href="horor">Horor</a>
+				<a href="drama">Drama</a>
+				<a href="akcija">Akcija</a>
+			</div>
+		</div> 
+		<div class="subnav">
+				<button class="subnavbtn">Izlazak <i class="fa fa-chevron-down"></i></button>
+			<div class="subnav-content">
+				<a href="slasticarna"><i class="fa fa-birthday-cake"></i> Slastičarne</a>
+				<a href="nocni_klubovi"><i class="fa fa-music"></i> Noćni klubovi</a>
+				<a href="kafic"><i class="fa fa-glass"></i> Kafići</a>
+				<a href="restorani"><i class="fa fa-cutlery"></i> Restorani</a>
+			</div>
+		</div>
+		<img src="static/styles/Slike/logo.png" alt="logo" class="logo">
+	</div>
+	<div class="loginbox">
+		<h2>Pretraži restorane</h2><br>
+		
+		<form class="gumb" method="POST" name="vform" action ="/unos" enctype="multipart/form-data">
+			<input type="text" id="trazilica" name="destinacija1" placeholder="Unesi ponudu koju želiš prikazati" required>
+			<button id="trazi" type="submit"><i class="fa fa-search"></i></button>
+		</form>
+		
+		<h3>Ponude koje možete pretražiti!</h3>
+		
+		<div class="row">
+			<div class="column">
+				<a id="1" onclick="klikni(this)" naziv-slike="Jupiter"><img src="https://photos.smugmug.com/Croatia/Pula-Istria/i-g93tRTn/0/ab537522/L/Pula-Croatia-Things-to-do-21-L.jpg" width="200" height="200"></a>
+				<p class="velicina">Jupiter</p>
+			</div>		
+			<div class="column">
+				<a id="2" onclick="klikni(this)" naziv-slike="Orfej"><img src="https://media-cdn.tripadvisor.com/media/photo-s/04/23/db/c0/orfej.jpg" width="200" height="200"></a>
+				<p class="velicina">Orfej</p>
+			</div>
+			<div class="column">
+				<a id="3" onclick="klikni(this)" naziv-slike="Odisej"><img src="https://media-cdn.tripadvisor.com/media/photo-s/04/23/db/60/odisej.jpg" width="200" height="200"></a>
+				<p class="velicina">Odisej</p>
+			</div>
+		</div>
+		<img class="dodaj" onClick="otvori()">
+		<div class="form-popup" id="forma">
+			<form class="form-container" method="POST" name="vform" action ="/restorani" enctype="multipart/form-data">
+			
+				<label for="kategorija"><b>Kategorija:</b></label> 
+				<select name="kategorija" class="tag">
+					<option value="Restorani">Restorani</option>
+					<option value="Kafići">Kafići</option>
+					<option value="Noćni klubovi">Noćni klubovi</option>
+					<option value="Slastičarne">Slastičarne</option>
+				</select><br><br>
+				
+				<label name="destinacija"><b>Naziv destinacije:</b></label>
+				<input type="text" name="destinacija" placeholder="Unesi naziv destinacije" required>
+				
+				<label name="adresa"><b>Adresa destinacije:</b></label>
+				<input type="text" name="adresa" placeholder="Unesi adresu destinacije" required>
+	
+				<label name="broj"><b>Broj telefona:</b></label>
+				<input type="text" name="broj" placeholder="Unesi broj telefona" required>
+	
+				<label name="email"><b>E-mail:</b></label>
+				<input type="text" name="email" placeholder="Unesi e-mail" required>
+	
+				<label name="opis"><b>Opis:</b></label>
+				<input type="text" name="opis" placeholder="Unesi opis destinacije" required>
+				
+				<label name="poster"><b>Unesi link za sliku:</b></label>
+				<input type="text" name="poster" placeholder="Unesi link za sliku" required>
+				
+				<label><b>Dodaj sliku:</b></label>
+				<input type="file" name="image" id="image" accept="image/*"/>
+				<br><br>
+				
+				<input type="submit" value="Spremi" onclick="clicked()" class="btn">
+				<button type="button" class="btn cancel" onclick="zatvori()">Odustani</button>
+			</form>
+		<div id='theParent' class='center_the_stuff'></div>
+	</div>
+</div>
+	<script type="text/javascript" src="static/styles/popup_izlasci.js"></script>
+	<script src="https://code.iconify.design/1/1.0.2/iconify.min.js"></script>
+</body>
+</html>

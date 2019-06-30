@@ -1,0 +1,179 @@
+body {
+	background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(Slike/drustvene.gif)no-repeat center fixed;
+	background-size: cover; 
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Izbornik */
+.navbar {
+	overflow: hidden;
+	background-color: black; 
+	width: 100%;
+}
+
+.navbar a {
+	float: right;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.logo{
+	margin: 5px 40px; 
+	padding: 5px 20px 0px 40px; 
+	width: 11.5%; 
+}
+
+.subnav {
+	float: right;
+	overflow: hidden;
+}
+
+.subnav .subnavbtn {
+	font-size: 16px;  
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: black;
+	font-family: inherit;
+	margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+	background-color: purple;
+}
+
+.subnav-content {
+	display: none;
+	position: absolute;
+	left: 0;
+	background-color: blue;
+	width: 100%;
+	z-index: 1;
+}
+
+.subnav-content a {
+	float: right;
+	color: white;
+	text-decoration: none;
+}
+
+.subnav-content a:hover {
+	background-color: #eee;
+	color: green;
+}
+
+.subnav:hover .subnav-content {
+	display: block;
+}
+
+.loginbox{
+	width: 1000px; 
+	height: 600px; 
+	background: #000000; 
+	color: black; 
+	top: 50%;  
+	left: 50%; 
+	position: absolute; 
+	transform: translate(-50%,-50%); 
+	box-sizing: border-box; 
+	padding: 40px 10px; 
+	opacity: 0.9;
+}
+
+/* forma pregleda */ 
+*{
+	margin: 0; 
+	padding: 0; 
+}
+h1{
+	padding: 0px 0px 30px 0px; 
+	font-size: 50px; 
+	color: white; 
+}
+
+p{ 
+	font-size: 20px; 
+	color: white; 
+}
+
+.header{
+	height: 5%; 
+}
+
+.header-gumb{
+	border-radius: 30px;
+	padding: 9px 20px; 
+	color: white; 
+	background: #107afd; 
+	font-weight: 600; 
+}
+
+.header-izbrisi{
+	position: absolute;
+	bottom: 10px;
+	right: 170px;
+	border-radius: 30px;
+	border: none;  
+	padding: 11px 30px; 
+	color: #fff; 
+	background: #000033; 
+	font-weight: 700; 
+	cursor: pointer;
+}
+
+.header-dodaj{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	border-radius: 30px;
+	border: none;
+	padding: 11px 30px;  
+	color: white; 
+	background: maroon; 
+	font-weight: 700; 
+	cursor: pointer;
+}
+
+.header-promijeni{
+	position: absolute;
+	bottom: 10px;
+	right: 500px;
+	background: green; 
+	color: white; 
+	border-radius: 30px;
+	border: none;
+	padding: 10px 20px; 
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.gumb2{
+	float: right; 
+	padding: 9px 20px; 
+	text-decoration: none; 
+	border-radius: 30px; 
+	color: white; 
+	font-weight: 700;
+	cursor: pointer;
+	background: #003300; 
+
+}
+.left-box{
+	margin: 20px 400px 10px 15px;
+	color: #fff;
+	padding: 10px;
+}
+
+.fa{
+	margin: 0 5px;
+}
+
+.slika img{
+	float:right;
+	margin: 10px 40px 50px 4px;
+}
